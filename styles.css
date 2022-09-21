@@ -4,17 +4,16 @@ body{
     margin: 0;
     min-height: 100vh;
     display: grid;
-    grid-template-columns: repeat(12, auto);
-    grid-template-rows: repeat(2, auto);
-    justify-content: center;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(4, auto);
     color: white;
     background-color: hsl(233, 47%, 7%);
 }
 
 .card {
     max-width: 350px;
-    grid-column: span 12;
-    align-self: center;
+    grid-column: 4/11;
+    grid-row: 2/4;
     background-color: hsl(244, 38%, 16%);
     border-radius: 1em;
 }
@@ -76,11 +75,57 @@ body{
     font-size: 11px; 
     text-align: center;
     align-self: end;
+    grid-row: 4;
     grid-column: span 12;
 }
 
 .attribution a { 
     color: hsl(228, 45%, 44%); 
- 
 }
 
+@media (min-width: 1000px) {
+    .card {
+        align-self: normal;
+        min-width: 100%;
+        max-height: 40vh;
+        justify-self: normal;
+        grid-column: 2/12;
+        grid-row: 2;
+        display: grid;
+        grid-template-rows: 3 auto;
+        grid-template-columns: 12 auto;
+    }
+    .header-img {
+        min-width: 40vw;
+        grid-column: 4/12;
+        grid-row: 1;
+        background: linear-gradient(hsl(277, 100%, 25%, 0.6), hsl(277, 100%, 25%, 0.6)), url("./images/image-header-desktop.jpg");
+        background-repeat: none;
+        background-size: cover;
+        border-radius: 0 1em 1em 0;;
+    }
+
+    .card-content {
+        grid-column: 1/4;
+        grid-row: 1;
+        padding-left: 1em;
+
+    }
+
+    #card-heading {
+        text-align: left;
+        padding-top: 1em;
+    }
+
+    .card-description {
+        text-align: left;
+        padding-top: 0.8em;    
+    }
+
+    .card-stat {
+        display: inline-flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        text-align: left;
+        padding: 3em 1em 0 2em; 
+    }
