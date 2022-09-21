@@ -127,5 +127,6 @@ body{
         flex-direction: column;
         flex-wrap: nowrap;
         text-align: left;
-        padding: 3em 1em 0 2em; 
+        padding: 3em 1em 2em 2em; 
     }
+}
